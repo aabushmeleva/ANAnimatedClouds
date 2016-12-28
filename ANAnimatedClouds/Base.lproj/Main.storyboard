@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Cloud View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ANCloudViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,80 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0eu-8b-IAs" userLabel="Gradient View" customClass="ANGradientView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                        <color key="value" red="0.63137254901960782" green="0.63137254901960782" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="finishColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wbs-lk-Dxs" userLabel="Cloud View" customClass="ANAnimatedView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Wbs-lk-Dxs" secondAttribute="height" multiplier="1:1" id="30A-Eq-WId"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7g8-Fa-4yH" userLabel="Start Button">
+                                <rect key="frame" x="60" y="577" width="80" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Puy-ZS-eWq"/>
+                                    <constraint firstAttribute="width" constant="80" id="oMO-qt-jce"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="20"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startAnimateClouds:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uPQ-BL-wP2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5KN-Cs-SDU" userLabel="Stop Button">
+                                <rect key="frame" x="235" y="577" width="80" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Fg4-XK-7oi"/>
+                                    <constraint firstAttribute="width" constant="80" id="n1q-L0-5Ac"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="20"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopAnimateClouds:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OSQ-Fx-YYs"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="7g8-Fa-4yH" secondAttribute="bottom" constant="60" id="BhV-0Z-JTH"/>
+                            <constraint firstItem="0eu-8b-IAs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IkE-eb-LgW"/>
+                            <constraint firstAttribute="bottom" secondItem="0eu-8b-IAs" secondAttribute="bottom" id="KBF-XF-0YO"/>
+                            <constraint firstAttribute="trailing" secondItem="Wbs-lk-Dxs" secondAttribute="trailing" id="KZD-Yx-wvo"/>
+                            <constraint firstAttribute="trailing" secondItem="5KN-Cs-SDU" secondAttribute="trailing" constant="60" id="MCK-6e-HoK"/>
+                            <constraint firstAttribute="bottom" secondItem="5KN-Cs-SDU" secondAttribute="bottom" constant="60" id="OhX-vd-NK3"/>
+                            <constraint firstItem="Wbs-lk-Dxs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ReR-Dm-gOO"/>
+                            <constraint firstItem="7g8-Fa-4yH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="60" id="U7d-Qh-8EJ"/>
+                            <constraint firstAttribute="trailing" secondItem="0eu-8b-IAs" secondAttribute="trailing" id="VF0-KV-muz"/>
+                            <constraint firstItem="0eu-8b-IAs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bMC-Jh-Rs3"/>
+                            <constraint firstItem="Wbs-lk-Dxs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="k3b-Qk-pts"/>
+                            <constraint firstItem="Wbs-lk-Dxs" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="tsJ-3U-JbB"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="animatedView" destination="Wbs-lk-Dxs" id="Ktz-NK-1cR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-524" y="-130"/>
         </scene>
     </scenes>
 </document>

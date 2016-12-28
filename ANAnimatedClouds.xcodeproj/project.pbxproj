@@ -7,25 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E22EA8151E12849F006AD452 /* ANSunView.m in Sources */ = {isa = PBXBuildFile; fileRef = E22EA8141E12849F006AD452 /* ANSunView.m */; };
+		E22EA8181E129746006AD452 /* ANCloudImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E22EA8171E129746006AD452 /* ANCloudImageView.m */; };
 		E2633BD71E10F87100C0A93D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2633BD61E10F87100C0A93D /* main.m */; };
 		E2633BDA1E10F87100C0A93D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2633BD91E10F87100C0A93D /* AppDelegate.m */; };
-		E2633BDD1E10F87100C0A93D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2633BDC1E10F87100C0A93D /* ViewController.m */; };
 		E2633BE01E10F87100C0A93D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2633BDE1E10F87100C0A93D /* Main.storyboard */; };
 		E2633BE21E10F87100C0A93D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2633BE11E10F87100C0A93D /* Assets.xcassets */; };
 		E2633BE51E10F87100C0A93D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2633BE31E10F87100C0A93D /* LaunchScreen.storyboard */; };
+		E2633BEF1E1103D700C0A93D /* CloudKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E2633BEE1E1103D700C0A93D /* CloudKit.m */; };
+		E2633BFD1E110D6400C0A93D /* ANCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2633BF91E110D6400C0A93D /* ANCloudViewController.m */; };
+		E2633C0E1E11162800C0A93D /* ANGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2633C0C1E11162800C0A93D /* ANGradientView.m */; };
+		E2633C111E111FF600C0A93D /* ANAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2633C101E111FF600C0A93D /* ANAnimatedView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E22EA8131E12849F006AD452 /* ANSunView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSunView.h; sourceTree = "<group>"; };
+		E22EA8141E12849F006AD452 /* ANSunView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSunView.m; sourceTree = "<group>"; };
+		E22EA8161E129746006AD452 /* ANCloudImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCloudImageView.h; sourceTree = "<group>"; };
+		E22EA8171E129746006AD452 /* ANCloudImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCloudImageView.m; sourceTree = "<group>"; };
 		E2633BD21E10F87100C0A93D /* ANAnimatedClouds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANAnimatedClouds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2633BD61E10F87100C0A93D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E2633BD81E10F87100C0A93D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E2633BD91E10F87100C0A93D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E2633BDB1E10F87100C0A93D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E2633BDC1E10F87100C0A93D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E2633BDF1E10F87100C0A93D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2633BE11E10F87100C0A93D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2633BE41E10F87100C0A93D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2633BE61E10F87100C0A93D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2633BED1E1103D700C0A93D /* CloudKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudKit.h; sourceTree = "<group>"; };
+		E2633BEE1E1103D700C0A93D /* CloudKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudKit.m; sourceTree = "<group>"; };
+		E2633BF81E110D6400C0A93D /* ANCloudViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCloudViewController.h; sourceTree = "<group>"; };
+		E2633BF91E110D6400C0A93D /* ANCloudViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCloudViewController.m; sourceTree = "<group>"; };
+		E2633C0B1E11162800C0A93D /* ANGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANGradientView.h; sourceTree = "<group>"; };
+		E2633C0C1E11162800C0A93D /* ANGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANGradientView.m; sourceTree = "<group>"; };
+		E2633C0F1E111FF600C0A93D /* ANAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAnimatedView.h; sourceTree = "<group>"; };
+		E2633C101E111FF600C0A93D /* ANAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAnimatedView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +75,12 @@
 			children = (
 				E2633BD81E10F87100C0A93D /* AppDelegate.h */,
 				E2633BD91E10F87100C0A93D /* AppDelegate.m */,
-				E2633BDB1E10F87100C0A93D /* ViewController.h */,
-				E2633BDC1E10F87100C0A93D /* ViewController.m */,
 				E2633BDE1E10F87100C0A93D /* Main.storyboard */,
+				E2633BF71E110D6400C0A93D /* example */,
 				E2633BE11E10F87100C0A93D /* Assets.xcassets */,
 				E2633BE31E10F87100C0A93D /* LaunchScreen.storyboard */,
 				E2633BE61E10F87100C0A93D /* Info.plist */,
+				E2633BEC1E1103D700C0A93D /* cloudKit */,
 				E2633BD51E10F87100C0A93D /* Supporting Files */,
 			);
 			path = ANAnimatedClouds;
@@ -77,6 +92,40 @@
 				E2633BD61E10F87100C0A93D /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E2633BEC1E1103D700C0A93D /* cloudKit */ = {
+			isa = PBXGroup;
+			children = (
+				E2633BED1E1103D700C0A93D /* CloudKit.h */,
+				E2633BEE1E1103D700C0A93D /* CloudKit.m */,
+			);
+			path = cloudKit;
+			sourceTree = "<group>";
+		};
+		E2633BF71E110D6400C0A93D /* example */ = {
+			isa = PBXGroup;
+			children = (
+				E2633C081E11162800C0A93D /* views */,
+				E2633BF81E110D6400C0A93D /* ANCloudViewController.h */,
+				E2633BF91E110D6400C0A93D /* ANCloudViewController.m */,
+			);
+			path = example;
+			sourceTree = "<group>";
+		};
+		E2633C081E11162800C0A93D /* views */ = {
+			isa = PBXGroup;
+			children = (
+				E22EA8161E129746006AD452 /* ANCloudImageView.h */,
+				E22EA8171E129746006AD452 /* ANCloudImageView.m */,
+				E22EA8131E12849F006AD452 /* ANSunView.h */,
+				E22EA8141E12849F006AD452 /* ANSunView.m */,
+				E2633C0F1E111FF600C0A93D /* ANAnimatedView.h */,
+				E2633C101E111FF600C0A93D /* ANAnimatedView.m */,
+				E2633C0B1E11162800C0A93D /* ANGradientView.h */,
+				E2633C0C1E11162800C0A93D /* ANGradientView.m */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,9 +200,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2633BDD1E10F87100C0A93D /* ViewController.m in Sources */,
+				E2633C111E111FF600C0A93D /* ANAnimatedView.m in Sources */,
+				E2633BEF1E1103D700C0A93D /* CloudKit.m in Sources */,
+				E22EA8181E129746006AD452 /* ANCloudImageView.m in Sources */,
+				E2633C0E1E11162800C0A93D /* ANGradientView.m in Sources */,
 				E2633BDA1E10F87100C0A93D /* AppDelegate.m in Sources */,
 				E2633BD71E10F87100C0A93D /* main.m in Sources */,
+				E22EA8151E12849F006AD452 /* ANSunView.m in Sources */,
+				E2633BFD1E110D6400C0A93D /* ANCloudViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +327,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 93EGZT6P33;
 				INFOPLIST_FILE = ANAnimatedClouds/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aabushmeleva.ANAnimatedClouds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -285,6 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 93EGZT6P33;
 				INFOPLIST_FILE = ANAnimatedClouds/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aabushmeleva.ANAnimatedClouds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -310,6 +366,7 @@
 				E2633BEB1E10F87100C0A93D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
