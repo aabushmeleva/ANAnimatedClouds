@@ -53,7 +53,7 @@
 
 - (void)updateViewAfterLoad {
     
-    ANSunView *sun = [[ANSunView alloc] initWithFrame:CGRectMake(self.layer.frame.size.width*3/9+80, self.layer.frame.size.width/9+80, 80, 80)];
+    ANSunView *sun = [[ANSunView alloc] initWithFrame:CGRectMake(self.layer.frame.size.width*3/9+80, self.layer.frame.size.width/9+80, 79, 79)];
     self.sunView = sun;
     
     [self addSubview: self.sunView];
@@ -65,6 +65,7 @@
     
     self.isAnimating = YES;
     
+    [self.sunView startAnimating];
     [self createCloud];
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(createCloud) userInfo:nil repeats:YES];
@@ -72,6 +73,8 @@
 }
 - (void)stopAnimation {
     self.isAnimating = NO;
+    
+    [self.sunView stopAnimating];
     
     [self.timer invalidate];
     self.timer = nil;
@@ -106,7 +109,7 @@
     } else {
         cloudImage = ANCloudKit.imageOfLargeCloudIcon;
         topConstraintValue = 35.0;
-        duration = 20.0;
+        duration = 30.0;
     }
     
     // imageView

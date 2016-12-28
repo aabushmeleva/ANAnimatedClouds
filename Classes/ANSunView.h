@@ -12,4 +12,7 @@
 
 @property (strong, nonatomic) UIImageView *sunImageView;
 
+- (void)startAnimating;
+- (void)stopAnimating;
+
 @end

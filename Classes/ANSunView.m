@@ -31,10 +31,33 @@
 
 - (void)initView {
     
-    UIImageView *cunImage = [[UIImageView alloc] initWithImage:ANCloudKit.imageOfSunIcon];
-    [cunImage setContentMode:UIViewContentModeScaleAspectFit];
+    UIImageView *sunImageView = [[UIImageView alloc] initWithImage:ANCloudKit.imageOfSunIcon];
     
-    [self addSubview: cunImage];
+    sunImageView.contentMode = UIViewContentModeScaleToFill;
+    
+    [self addSubview: sunImageView];
+    
+
+
+}
+
+#pragma mark - Rotation
+
+- (void)startAnimating {
+    CABasicAnimation *rotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    rotation.beginTime = 0.0;
+    rotation.duration = 6;
+    rotation.fromValue = @(0.0);
+    rotation.toValue = [NSNumber numberWithFloat:(2.0 * M_PI)];
+    rotation.fillMode = kCAFillModeForwards;
+    rotation.repeatCount = HUGE_VALF;
+    rotation.removedOnCompletion = NO;
+    
+    [self.layer addAnimation:rotation forKey:@"transform.rotation"];
+}
+
+- (void)stopAnimating {
+    [self.layer removeAnimationForKey:@"transform.rotation"];
 }
 
 @end
