@@ -49,6 +49,7 @@
 
 - (void)initView {
     self.isAnimating = NO;
+    self.backgroundColor = [UIColor clearColor];
 }
 
 - (void)updateViewAfterLoad {
