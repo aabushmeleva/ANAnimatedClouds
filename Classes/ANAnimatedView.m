@@ -9,7 +9,7 @@
 #import "ANAnimatedView.h"
 
 // paintCode
-#import "CloudKit.h"
+#import "ANCloudKit.h"
 
 // view
 #import "ANCloudImageView.h"
@@ -95,16 +95,16 @@
     self.lastCloudIndex = randomNumber;
     
     if (randomNumber == 1) {
-        cloudImage = CloudKit.imageOfSmallCloudIcon;
+        cloudImage = ANCloudKit.imageOfSmallCloudIcon;
         topConstraintValue = 72.0;
         duration = 10.0;
         
     } else if (randomNumber == 2) {
-        cloudImage = CloudKit.imageOfMiddleCloudIcon;
+        cloudImage = ANCloudKit.imageOfMiddleCloudIcon;
         topConstraintValue = 46.0;
         duration = 14.0;
     } else {
-        cloudImage = CloudKit.imageOfLargeCloudIcon;
+        cloudImage = ANCloudKit.imageOfLargeCloudIcon;
         topConstraintValue = 35.0;
         duration = 20.0;
     }

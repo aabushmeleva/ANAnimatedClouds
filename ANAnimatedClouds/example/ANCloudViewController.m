@@ -8,9 +8,6 @@
 
 #import "ANCloudViewController.h"
 
-// paintCode
-#import "CloudKit.h"
-
 // view
 #import "ANAnimatedView.h"
 

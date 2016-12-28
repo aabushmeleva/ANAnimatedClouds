@@ -9,7 +9,7 @@
 #import "ANSunView.h"
 
 // paintCode
-#import "CloudKit.h"
+#import "ANCloudKit.h"
 
 @implementation ANSunView
 
@@ -31,7 +31,7 @@
 
 - (void)initView {
     
-    UIImageView *cunImage = [[UIImageView alloc] initWithImage:CloudKit.imageOfSunIcon];
+    UIImageView *cunImage = [[UIImageView alloc] initWithImage:ANCloudKit.imageOfSunIcon];
     [cunImage setContentMode:UIViewContentModeScaleAspectFit];
     
     [self addSubview: cunImage];
