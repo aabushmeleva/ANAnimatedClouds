@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
 
   s.source       = { :git => "https://github.com/aabushmeleva/ANAnimatedClouds.git" }
-  s.source_files = "ANAnimatedClouds/**/*.{h,m}"
-  s.public_header_files = "ANAnimatedClouds/**/*.{h}"
+  s.source_files = "Classes/**/*.{h,m}"
+  s.public_header_files = "Classes/**/*.{h}"
   s.framework    = "UIKit"
   s.requires_arc = true
 
