@@ -50,15 +50,11 @@
 - (void)initView {
     self.isAnimating = NO;
     self.backgroundColor = [UIColor clearColor];
-}
-
-- (void)updateViewAfterLoad {
     
     ANSunView *sun = [[ANSunView alloc] initWithFrame:CGRectMake(self.layer.frame.size.width*3/9+80, self.layer.frame.size.width/9+80, 79, 79)];
     self.sunView = sun;
     
     [self addSubview: self.sunView];
-
 }
 
 - (void)startAnimation {
@@ -73,6 +69,8 @@
     
 }
 - (void)stopAnimation {
+    if (!self.isAnimating) return;
+    
     self.isAnimating = NO;
     
     [self.sunView stopAnimating];

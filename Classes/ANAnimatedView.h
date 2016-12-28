@@ -10,8 +10,6 @@
 
 @interface ANAnimatedView : UIView
 
-- (void)updateViewAfterLoad;
-
 - (void)startAnimation;
 - (void)stopAnimation;
 
