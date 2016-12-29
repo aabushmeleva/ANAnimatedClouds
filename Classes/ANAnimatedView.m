@@ -130,12 +130,12 @@
     
     if (randomNumber == 1) {
         cloudImage = ANCloudKit.imageOfSmallCloudIcon;
-        topConstraintValue = 72.0;
+        topConstraintValue = 78.0;
         duration = 10.0;
         
     } else if (randomNumber == 2) {
         cloudImage = ANCloudKit.imageOfMiddleCloudIcon;
-        topConstraintValue = 46.0;
+        topConstraintValue = 45.0;
         duration = 14.0;
     } else {
         cloudImage = ANCloudKit.imageOfLargeCloudIcon;
