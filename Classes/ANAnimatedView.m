@@ -11,14 +11,9 @@
 // paintCode
 #import "ANCloudKit.h"
 
-// view
-#import "ANCloudImageView.h"
-#import "ANSunView.h"
-
 @interface ANAnimatedView ()
 
-@property (strong, nonatomic) ANSunView *sunView;
-
+@property (strong, nonatomic) UIImageView *sunImageView;
 @property (strong, nonatomic) NSArray *cloudViews;
 
 @property (strong, nonatomic) NSMutableArray *cloudsArray;
@@ -50,19 +45,55 @@
 - (void)initView {
     self.isAnimating = NO;
     self.backgroundColor = [UIColor clearColor];
-    
-    ANSunView *sun = [[ANSunView alloc] initWithFrame:CGRectMake(self.layer.frame.size.width*3/9+80, self.layer.frame.size.width/9+80, 79, 79)];
-    self.sunView = sun;
-    
-    [self addSubview: self.sunView];
+
+    [self createSun];
 }
+
+#pragma mark - Sun Creation
+
+- (void)createSun {
+    
+    UIImageView *sunImageView = [[UIImageView alloc] initWithImage:ANCloudKit.imageOfSunIcon];
+    
+    [sunImageView setContentMode:UIViewContentModeScaleAspectFit];
+    sunImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    self.sunImageView = sunImageView;
+    
+    [self addSubview: self.sunImageView];
+    
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.sunImageView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1 constant:0.0]];
+    
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.sunImageView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1 constant:-self.layer.frame.size.width/9]];
+}
+
+#pragma mark - Sun Rotation
+
+- (void)startSunRotation {
+    CABasicAnimation *rotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    rotation.beginTime = 0.0;
+    rotation.duration = 6;
+    rotation.fromValue = @(0.0);
+    rotation.toValue = [NSNumber numberWithFloat:(2.0 * M_PI)];
+    rotation.fillMode = kCAFillModeForwards;
+    rotation.repeatCount = HUGE_VALF;
+    rotation.removedOnCompletion = NO;
+    
+    [self.sunImageView.layer addAnimation:rotation forKey:@"transform.rotation"];
+}
+
+- (void)stopSunRotation {
+    [self.sunImageView.layer removeAnimationForKey:@"transform.rotation"];
+}
+
+#pragma mark - Animation
 
 - (void)startAnimation {
     if (self.isAnimating) return;
     
     self.isAnimating = YES;
     
-    [self.sunView startAnimating];
+    [self startSunRotation];
     [self createCloud];
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(createCloud) userInfo:nil repeats:YES];
@@ -73,7 +104,7 @@
     
     self.isAnimating = NO;
     
-    [self.sunView stopAnimating];
+    [self stopSunRotation];
     
     [self.timer invalidate];
     self.timer = nil;
@@ -81,6 +112,7 @@
     [self.layer removeAllAnimations];
 }
 
+#pragma mark - Cloud  Creation
 
 - (void)createCloud {
     UIImage *cloudImage;
@@ -122,7 +154,7 @@
     [self addSubview: cloud];
     
     // constraint
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.sunView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:cloud attribute:NSLayoutAttributeTop multiplier:1 constant:-topConstraintValue]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.sunImageView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:cloud attribute:NSLayoutAttributeTop multiplier:1 constant:-topConstraintValue]];
     
     NSLayoutConstraint * horizontalConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:cloud attribute:NSLayoutAttributeLeading multiplier:1 constant:cloud.frame.size.width];
     
@@ -135,20 +167,6 @@
     horizontalConstraint.constant = constraintValue;
     
     [UIView animateWithDuration:duration delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
-        [self layoutIfNeeded];
-        
-    } completion:^(BOOL finished) {
-        
-        [self.cloudsArray removeObject:cloud];
-        [cloud removeFromSuperview];
-    }];
-}
-
-- (void)animateCloudConstraint:(NSLayoutConstraint *)constraint withCloud:(UIImageView *)cloud {
-    CGFloat constraintValue = - (self.layer.frame.size.width);
-    constraint.constant = constraintValue;
-    
-    [UIView animateWithDuration:8 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
         [self layoutIfNeeded];
         
     } completion:^(BOOL finished) {

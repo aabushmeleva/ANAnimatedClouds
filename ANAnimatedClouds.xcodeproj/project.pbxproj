@@ -10,8 +10,6 @@
 		E22EA81E1E13999F006AD452 /* ANCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E22EA81B1E13999F006AD452 /* ANCloudViewController.m */; };
 		E22EA81F1E13999F006AD452 /* ANGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = E22EA81D1E13999F006AD452 /* ANGradientView.m */; };
 		E22EA8271E1399D7006AD452 /* ANAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E22EA8221E1399D7006AD452 /* ANAnimatedView.m */; };
-		E22EA8281E1399D7006AD452 /* ANCloudImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E22EA8241E1399D7006AD452 /* ANCloudImageView.m */; };
-		E22EA8291E1399D7006AD452 /* ANSunView.m in Sources */ = {isa = PBXBuildFile; fileRef = E22EA8261E1399D7006AD452 /* ANSunView.m */; };
 		E22EA8311E139BF8006AD452 /* ANCloudKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E22EA8301E139BF8006AD452 /* ANCloudKit.m */; };
 		E2633BD71E10F87100C0A93D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2633BD61E10F87100C0A93D /* main.m */; };
 		E2633BDA1E10F87100C0A93D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2633BD91E10F87100C0A93D /* AppDelegate.m */; };
@@ -27,10 +25,6 @@
 		E22EA81D1E13999F006AD452 /* ANGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANGradientView.m; sourceTree = "<group>"; };
 		E22EA8211E1399D7006AD452 /* ANAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAnimatedView.h; sourceTree = "<group>"; };
 		E22EA8221E1399D7006AD452 /* ANAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAnimatedView.m; sourceTree = "<group>"; };
-		E22EA8231E1399D7006AD452 /* ANCloudImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCloudImageView.h; sourceTree = "<group>"; };
-		E22EA8241E1399D7006AD452 /* ANCloudImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCloudImageView.m; sourceTree = "<group>"; };
-		E22EA8251E1399D7006AD452 /* ANSunView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSunView.h; sourceTree = "<group>"; };
-		E22EA8261E1399D7006AD452 /* ANSunView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSunView.m; sourceTree = "<group>"; };
 		E22EA82F1E139BF8006AD452 /* ANCloudKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCloudKit.h; sourceTree = "<group>"; };
 		E22EA8301E139BF8006AD452 /* ANCloudKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCloudKit.m; sourceTree = "<group>"; };
 		E2633BD21E10F87100C0A93D /* ANAnimatedClouds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANAnimatedClouds.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,10 +65,6 @@
 				E22EA82E1E139BF8006AD452 /* ANCloudKit */,
 				E22EA8211E1399D7006AD452 /* ANAnimatedView.h */,
 				E22EA8221E1399D7006AD452 /* ANAnimatedView.m */,
-				E22EA8231E1399D7006AD452 /* ANCloudImageView.h */,
-				E22EA8241E1399D7006AD452 /* ANCloudImageView.m */,
-				E22EA8251E1399D7006AD452 /* ANSunView.h */,
-				E22EA8261E1399D7006AD452 /* ANSunView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -204,10 +194,8 @@
 				E22EA8271E1399D7006AD452 /* ANAnimatedView.m in Sources */,
 				E22EA81F1E13999F006AD452 /* ANGradientView.m in Sources */,
 				E2633BD71E10F87100C0A93D /* main.m in Sources */,
-				E22EA8291E1399D7006AD452 /* ANSunView.m in Sources */,
 				E22EA8311E139BF8006AD452 /* ANCloudKit.m in Sources */,
 				E22EA81E1E13999F006AD452 /* ANCloudViewController.m in Sources */,
-				E22EA8281E1399D7006AD452 /* ANCloudImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
