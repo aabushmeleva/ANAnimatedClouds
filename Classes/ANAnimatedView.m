@@ -111,7 +111,7 @@
         self.airTimer = [NSTimer scheduledTimerWithTimeInterval:8 target:self selector:@selector(createAirplane) userInfo:nil repeats:YES];
     }];
     
-    [NSTimer scheduledTimerWithTimeInterval:2 target:blockOperation selector:@selector(main) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:5 target:blockOperation selector:@selector(main) userInfo:nil repeats:NO];
     
         // clouds timer
     self.cloudsTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(createCloud) userInfo:nil repeats:YES];
