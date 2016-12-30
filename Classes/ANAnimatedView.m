@@ -105,15 +105,18 @@
     [self startSunRotation];
     [self createCloud];
     
+//    // air timer
+//    NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
+//        [self createAirplane];
+//        self.airTimer = [NSTimer scheduledTimerWithTimeInterval:8 target:self selector:@selector(createAirplane) userInfo:nil repeats:YES];
+//    }];
+//    
+//    [NSTimer scheduledTimerWithTimeInterval:5 target:blockOperation selector:@selector(main) userInfo:nil repeats:NO];
+    
     // air timer
-    NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
-        [self createAirplane];
-        self.airTimer = [NSTimer scheduledTimerWithTimeInterval:8 target:self selector:@selector(createAirplane) userInfo:nil repeats:YES];
-    }];
+    self.airTimer = [NSTimer scheduledTimerWithTimeInterval:8 target:self selector:@selector(createAirplane) userInfo:nil repeats:YES];
     
-    [NSTimer scheduledTimerWithTimeInterval:5 target:blockOperation selector:@selector(main) userInfo:nil repeats:NO];
-    
-        // clouds timer
+    // clouds timer
     self.cloudsTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(createCloud) userInfo:nil repeats:YES];
 
     
