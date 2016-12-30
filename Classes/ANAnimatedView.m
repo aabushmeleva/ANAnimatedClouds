@@ -14,11 +14,20 @@
 @interface ANAnimatedView ()
 
 @property (strong, nonatomic) UIImageView *sunImageView;
+@property (strong, nonatomic) UIImageView *airplaneImage;
 @property (strong, nonatomic) NSArray *cloudViews;
 
 @property (strong, nonatomic) NSMutableArray *cloudsArray;
 @property (assign, nonatomic) BOOL isAnimating;
-@property (strong, nonatomic) NSTimer *timer;
+
+@property (strong, nonatomic) NSTimer *cloudsTimer;
+@property (strong, nonatomic) NSTimer *airTimer;
+
+@property (strong, nonatomic) NSLayoutConstraint *airHorizontalConstraint;
+@property (strong, nonatomic) NSLayoutConstraint *airVerticalConstraint;
+
+@property (assign, nonatomic) CGFloat airVerticalConstValue;
+@property (assign, nonatomic) CGFloat airHorizontalConstValue;
 
 @property (assign, nonatomic) NSInteger lastCloudIndex;
 
@@ -96,7 +105,17 @@
     [self startSunRotation];
     [self createCloud];
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(createCloud) userInfo:nil repeats:YES];
+    // air timer
+    NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
+        [self createAirplane];
+        self.airTimer = [NSTimer scheduledTimerWithTimeInterval:8 target:self selector:@selector(createAirplane) userInfo:nil repeats:YES];
+    }];
+    
+    [NSTimer scheduledTimerWithTimeInterval:2 target:blockOperation selector:@selector(main) userInfo:nil repeats:NO];
+    
+        // clouds timer
+    self.cloudsTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(createCloud) userInfo:nil repeats:YES];
+
     
 }
 - (void)stopAnimation {
@@ -106,8 +125,11 @@
     
     [self stopSunRotation];
     
-    [self.timer invalidate];
-    self.timer = nil;
+    [self.cloudsTimer invalidate];
+    [self.airTimer invalidate];
+    
+    self.cloudsTimer = nil;
+    self.airTimer = nil;
     
     [self.layer removeAllAnimations];
 }
@@ -167,6 +189,7 @@
     horizontalConstraint.constant = constraintValue;
     
     [UIView animateWithDuration:duration delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
+        
         [self layoutIfNeeded];
         
     } completion:^(BOOL finished) {
@@ -178,6 +201,53 @@
 
 - (NSInteger)rundomNumber {
     return (int)1 + arc4random() % (3);
+}
+
+#pragma mark - Airplane  Creation
+
+- (void)createAirplane {
+    
+    if (!self.airplaneImage && self.airplaneImage == nil) {
+
+        // imageView
+        UIImageView *airplane = [[UIImageView alloc] initWithImage:ANCloudKit.imageOfPlaneIcon];
+        
+        [airplane setContentMode:UIViewContentModeScaleAspectFit];
+        airplane.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        self.airplaneImage = airplane;
+        
+        [self addSubview:self.airplaneImage];
+        
+        // constraint
+        self.airVerticalConstValue = -128.0;
+        self.airHorizontalConstValue = self.airplaneImage.frame.size.width;
+        
+        self.airVerticalConstraint = [NSLayoutConstraint constraintWithItem:self.sunImageView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.airplaneImage attribute:NSLayoutAttributeTop multiplier:1 constant:self.airVerticalConstValue];
+
+        self.airHorizontalConstraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.airplaneImage attribute:NSLayoutAttributeLeading multiplier:1 constant:self.airHorizontalConstValue];
+        
+        [self addConstraint:self.airVerticalConstraint];
+        [self addConstraint:self.airHorizontalConstraint];
+        
+        [self layoutIfNeeded];
+    }
+    
+    // animation
+    self.airHorizontalConstraint.constant = - self.layer.frame.size.width;
+    self.airVerticalConstraint.constant = self.airVerticalConstValue + tan(13*3.14159 /180)*self.frame.size.width;
+                                   
+    [UIView animateWithDuration:7.0 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
+        
+        [self layoutIfNeeded];
+    
+    } completion:^(BOOL finished) {
+
+        self.airVerticalConstraint.constant = self.airVerticalConstValue;
+        self.airHorizontalConstraint.constant = self.airHorizontalConstValue;
+        
+        [self layoutIfNeeded];
+    }];
 }
 
 @end
